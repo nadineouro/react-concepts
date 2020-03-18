@@ -18,6 +18,9 @@
     color: get-color($theme, 'headerText');
     font-size: 25px;
     cursor: pointer;
+    @include small-screen {
+      font-size: 20px;
+    }
   }
 }
 

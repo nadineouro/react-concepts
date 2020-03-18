@@ -1,0 +1,42 @@
+@import '../../styles/variables/colors';
+
+@mixin country-card($theme) {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid get-color($theme, 'primary');
+  border-radius: 8px;
+  &-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 8px;
+    background-color: get-color($theme, 'primary');
+    padding: 10px;
+    font-size: 20px;
+    color: get-color($theme, 'headerText')
+  }
+  &-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    &-line {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.app-container {
+  &-light {
+    .country-card { @include country-card('light'); }
+  }
+  &-dark {
+    .country-card { @include country-card('dark'); }
+  }
+}

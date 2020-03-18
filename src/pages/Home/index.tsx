@@ -4,6 +4,7 @@ import './styles.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountries } from '../../store/country/actions'
 import { ApplicationState } from '../../store/types'
+import CountryCard from '../../components/CountryCard'
 
 const Home: React.FC<Props> = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Home: React.FC<Props> = () => {
 
   return (
     <div className='country-list'>
-      {countries.map(country => <label key={country.code}>{country.name}</label>)}
+      {countries.map(country => <CountryCard key={country.code} country={country} />)}
     </div>
   )
 }
