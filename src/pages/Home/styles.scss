@@ -1,0 +1,17 @@
+@import '../../styles/variables/colors';
+
+@mixin country-list($theme) {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.app-container {
+  &-light { 
+    .country-list { @include country-list('light'); }
+  }
+  &-dark {
+    .country-list { @include country-list('dark'); }
+  }
+}

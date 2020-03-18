@@ -1,0 +1,36 @@
+@import '../../styles/variables/breakpoints';
+@import '../../styles/shared/global';
+@import '../../styles/variables/colors';
+
+@mixin header($theme) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: get-color($theme, 'primary');
+  color: get-color($theme, 'headerText');
+  padding: 10px;
+  
+  button {
+    outline: none;
+    border: 0;
+    background-color: get-color($theme, 'primary');
+    color: get-color($theme, 'headerText');
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
+
+.app-container {
+  &-light {
+    .header {
+      @include header('light');
+    }
+  }
+  &-dark {
+    .header {
+      @include header('dark');
+    }
+  }
+}
+

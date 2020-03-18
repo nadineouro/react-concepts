@@ -1,0 +1,17 @@
+$sm-max-width: 599px;
+$md-min-width: 600px;
+$lg-min-width: 900px;
+$xl-min-width: 1200px;
+$xxl-min-width: 1800px;
+
+$sidebar-min-width: 60px;
+$sidebar-open-width: 240px;
+
+$modal-min-height: 0;
+$modal-open-height: 100vh;
+
+@mixin small-screen { @media (max-width: $sm-max-width) { @content; } }
+@mixin medium-screen { @media (min-width: $md-min-width) { @content; } }
+@mixin large-screen { @media (min-width: $lg-min-width) { @content; } }
+@mixin extra-large-screen { @media (min-width: $lg-min-width) { @content; } }
+@mixin extra-extra-large-screen { @media (min-width: $xxl-min-width) { @content; } }

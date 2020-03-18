@@ -1,0 +1,19 @@
+$gray-light: #eee;
+$gray-dark: #303030;
+$accent: #d25a2c;
+$error: #de2329;
+$white: #fff;
+$black: #000;
+
+$color-collection: (
+  'background': ( 'light': $gray-light, 'dark': $gray-dark ),
+  'primary': ( 'light': $accent, 'dark': $accent ),
+  'error': ( 'light': $error, 'dark': $error ),
+  'headerText': ( 'light': $white, 'dark': $white ),
+  'text': ( 'light': $gray-dark, 'dark': $gray-light ),
+);
+
+@function get-color($theme, $color) {
+  $map: map-get($color-collection, $color);
+  @return map-get($map, $theme);
+}
